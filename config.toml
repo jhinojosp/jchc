@@ -2,7 +2,7 @@
 baseurl = "/"
 languageCode = "es-mx"
 title = "Juan Carlos Hinojosa Peredo"
-theme = "beautifulhugo"
+theme = "hugo-ivy"
 googleAnalytics = ""
 disqusShortname = ""
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
