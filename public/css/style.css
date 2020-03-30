@@ -1,323 +1,461 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather');
-@import url('https://fonts.googleapis.com/css?family=Alegreya+Sans+SC');
-body, li  p {
-	font-family: 'Merriweather', serif;
-}
-
-h1,h2,h3,h4,h5,h6,header,header.a {
-	text-transform: lowercase;
-	font-family: 'Alegreya Sans SC', sans-serif;
-}
-
-header,header.a{
-	font-weight: bold;
-}
-
-@media all {
-	html {
-		font-size: 18px;
-	}
-	body > * {
-		font-size: 100%;
-		margin-left: 7.5rem;
-		margin-right: 7.5rem;
-	}
-}
-@media all and (max-width:840px){
-	html {
-		font-size: 17px;
-	}
-	body > * {
-		margin-left: 5.5rem;
-		margin-right: 5.5rem;
-    }
-}
-@media all and (max-width:760px){
-	body > * {
-		margin-left: 2.5rem;
-		margin-right: 2.5rem;
-    }
-}
-@media all and (max-width:580px){
-	html {
-		font-size: 16px;
-	}
-	body > * {
-        margin: 0.7rem 1.5rem 0 1.5rem;
-    }
-}
-
-/* reset */
-* {
-margin: 0;
-padding: 0;
-}
+/* Micro Reset */
 
 html {
-    height: 100%;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
-	padding: 0rem 0em 0rem 0em;
-	margin-left:auto;
-	margin-right:auto;
-	width:100%;
-	max-width:1000px;
-	min-height: 100%;
-	text-rendering: optimizeLegibility;
-	-moz-font-feature-settings: 'kern=1';
-	-moz-font-feature-settings: 'kern' 1;
-	-webkit-font-feature-settings: 'kern' 1;
-	-o-font-feature-settings: 'kern' 1;
-	-ms-font-feature-settings: 'kern' 1;
-	font-feature-settings: 'kern' 1;
-
-	text-rendering: optimizeLegibility;
-	-moz-font-feature-settings: 'liga=1';
-	-moz-font-feature-settings: 'liga' 1;
-	-webkit-font-feature-settings: 'liga' 1;
-	-o-font-feature-settings: 'liga' 1;
-	-ms-font-feature-settings: 'liga' 1;
-	font-feature-settings: 'liga' 1;
+  margin: 0;
+  padding: 0;
 }
 
-div.content { 
-    display: block; 
-    padding: 1rem 0rem 5rem 0;
-}
-
-header {
-	display:block;
-	padding: 0.5rem 0 0.5rem 0;
-	border-bottom: 0.10em solid black;
-}
-
-footer {
-	display:block;
-	padding: 0.5rem 0 5.5rem 0;
-}
-
-@media all and (max-width:520px) {
-    div.content { 
-    	padding: 0;
-    }
-}
-
-h1 {
-	display: block;
-	font-size: 170%;
-	line-height: 1.1;
-	margin-top: 1rem;
-	margin-bottom: 1.5rem;
-	padding-top: 0.02em;
-	-moz-hyphens: none;
-	-webkit-hyphens: none;
-	-o-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-aside {
-	font-size: 0.84rem;
-	line-height: 1.40;
-	color: #667;
-}
-
-aside em {
-	font-size: 0.7rem;
-}
-
-
-p {
-	margin-bottom: 1em;
-	line-height: 1.45;
-}
-
-ul,ol {
-	margin-bottom: 1em;
-	padding-left: 1em;
-}
-
-li {
-	line-height: 1.75;
-}
-
-
-table { 
-	margin-bottom: 1.5em;
-	border-collapse: collapse;
-	width: 95%;
-}
-
-table tr + tr {
-	border-top: 1px solid #ccc;
-}
-table td + td {
-	border-left: 1px solid #ccc;
-}
-
-table td {
-	padding: 0.4em;
-	text-align: center;
-	-moz-hyphens: none;
-	-webkit-hyphens: none;
-	-o-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
-
-table th {
-	font-weight: normal;
-	text-transform: uppercase;
-	font-size: 95%;
-	padding: 0.3rem 0.5rem 0.3rem 0.5rem;
-	line-height: 1.05;
+button, input, select, textarea, label {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
 }
 
 img {
-	width: 100%;
-	border-radius: 25px;
+  max-width: 100%;
 }
 
+/* Typography */
 
+body {
+  line-height: 1.75;
+}
 
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 60px 0 30px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+h3, h4, h5, h6 {
+  font-size: 19px;
+  font-weight: bold;
+  text-align: left;
+}
+
+blockquote {
+  margin: 1em 0;
+  padding: 0 2em;
+  border-left: 3px solid #ddd;
+}
+
+/* Code */
+
+pre, code {
+  font-size: .9em;
+}
+
+pre code {
+  display: block;
+  border: 1px solid #ddd;
+  box-shadow: 5px 5px 5px #eee;
+  padding: 1em;
+  overflow-x: auto;
+  line-height: 1.75;
+}
+
+code {
+  background: #f9f9f9;
+}
+
+pre code {
+  background: none;
+}
+
+/* Lists */
+
+ul, ol {
+  padding: 0 0 0 20px;
+}
+
+li {
+  margin: 4px 0;
+  padding: 0;
+}
+
+/* Links */
 
 a {
-	text-decoration: none;
-	color: inherit;
-	-moz-transition-property: background;
-	-webkit-transition-property: background;
-	transition-property: background;
-	-moz-transition-duration: 0.2s;
-	-webkit-transition-duration: 0.2s;
-	transition-duration: 0.2s;
-}
-
-
-div.nav a:active div { 
-	background: #cacaca;
-}
-
-a:active { 
-	color: #777; 
+  color: black;
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid;
 }
 
 a:hover {
-	background: #fbf3f3;
-	-moz-transition-property: background;
-	-webkit-transition-property: background;
-	transition-property: background;
-	-moz-transition-duration: 0.2s;
-	-webkit-transition-duration: 0.2s;
-	transition-duration: 0.2s;
-	border-radius: 10px;
 }
 
-
-a:after {
-    position: relative;
-    content: "\FEFF°";
-    margin-left: 0.10em;
-    font-size: 80%;
-    top: -0.30em;
-    left: -0.1em;
-    color: #d21c1c;
+sup a {
+  border-bottom: none;
 }
 
+/* Miscellanea */
 
-code {
-	font-size: 95%;
-	-moz-hyphens: none;
-	-webkit-hyphens: none;
-	-o-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid;
+  margin: 50px auto;
+  padding: 0;
+  max-width: 300px;
 }
 
-
-pre {
-    font-size:0.8rem;
-    background: #f5f7f9;
-    padding: 1em;
-    margin-bottom:20px;
-    vertical-align: text-bottom;
-    white-space: pre-wrap;       /* css-3 */
-    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
-    white-space: -pre-wrap;      /* Opera 4-6 */
-    white-space: -o-pre-wrap;    /* Opera 7 */
-    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+.copyright {
+  text-align: center;
 }
 
-figcaption {
-    font-weight: 400;
-    font-style: italic;
-    font-size: 0.7em/1.52;
-    line-height: 1.3;
-    color: #666665;
-    outline: 0;
-    z-index: 300;
-    text-align: center;
-}
-blockquote {
-  font-style: italic;
-  font-size: 1.1em;
-  margin: 0.7em 10px;
-  padding: 1.2em 20px;
-  margin-bottom: 0px;
-  quotes: "\201C""\201D""\2018""\2019";
-}
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 3em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-
-blockquote:after {
-  color: #ccc;
-  content: close-quote;
-  font-size: 3em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-blockquote p {
-  display: inline;
-}
-
-
-.twitter-tweet {
-  display: inline-block;
-  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
-  font-size: 12px;
+.post-nav {
+  display: flex;
+  justify-content: space-between;
   font-weight: bold;
-  line-height: 16px;
-  border-color: #eee #ddd #bbb;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 1px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-  margin: 10px 5px;
-  padding: 0 16px 16px 16px;
-  max-width: 468px;
 }
 
-.twitter-tweet p {
-  font-size: 16px;
+.nav-next {
+  margin-left: 1em;
+  text-align: right;
+}
+
+.nav-prev {
+  margin-right: 1em;
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+/* Layout */
+
+body {
+  width: 960px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+.masthead {
+  width: 260px;
+  padding: 20px 50px 20px 10px;
+  float: left;
+}
+
+.main {
+  width: 700px;
+  padding: 32px 10px 20px 50px;
+  margin-left: 260px;
+  border-left: 3px solid black;
+  min-height: calc(100vh - 60px);
+}
+
+/* Masthead */
+
+.masthead h1 {
+  margin-top: 0;
+  margin-bottom: 34px;
+  padding: 0;
+  text-align: right;
+  font-size: 46px;
+  line-height: 58px;
+}
+
+.masthead h1 a {
+  border-bottom: none;
+}
+
+.masthead .tagline {
+  font-style: italic;
+  text-align: right;
+}
+
+.masthead .menu {
+  margin-right: 20px;
+  direction: rtl;
+}
+
+.masthead .menu a {
+  direction: ltr;
+}
+
+.masthead .menu ul ul {
+  list-style: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.masthead .menu li li::before {
+  content: "•\00a\000a0\00a0"
+}
+
+#menu-check {
+  display: none;
+}
+
+#menu-label {
+  display: none;
+}
+
+/* Main */
+
+.main .title h1 {
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.title h3 {
   font-weight: normal;
-  line-height: 20px;
+  text-align: center;
 }
 
-.twitter-tweet a {
-  color: inherit;
-  font-weight: normal;
-  text-decoration: none;
-  outline: 0 none;
+.subtitle {
+  font-size: .9em;
+  color: #666;
 }
 
-.twitter-tweet a:hover,
-.twitter-tweet a:focus {
-  text-decoration: underline;
+/* Footnotes */
+
+.footnotes {
+  font-size: .9em;
+}
+
+/* Tables */
+
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+
+table thead th {
+  border-bottom: 1px solid #666;
+}
+
+th, td {
+  padding: 5px;
+}
+
+thead, tfoot, tr:nth-child(even) {
+  background: #f8f8f8;
+}
+
+/**
+ * Utility Styles
+ */
+
+.unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/**
+ * -------------------------------------------------------------------------
+ *  Media Queries
+ * -------------------------------------------------------------------------
+ *
+ * The @viewport tag does the same thing as
+ *
+ *   <meta name="viewport" content="width=device-width">
+ *
+ * but in the future W3C standard way. The -ms- prefix is required for
+ * IE10+ to render responsive styling in Windows 8 "snapped" views;
+ * IE10+ does not honour the meta tag.
+ */
+
+@-ms-viewport {
+  width: device-width;
+}
+
+@viewport {
+  width: device-width;
+}
+
+/* Tablet screens and smaller */
+
+@media screen and (max-width: 960px) {
+
+  body {
+    width: auto;
+    max-width: 700px;
+  }
+
+  .masthead {
+    width: auto;
+    float: none;
+    padding: 20px 0 60px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 3px solid black;
+  }
+
+  .main {
+    width: auto;
+    padding: 40px 10px;
+    margin-left: 0;
+    border-left: none;
+    min-height: auto;
+  }
+
+  .masthead h1 {
+    text-align: center;
+  }
+
+  .masthead .tagline {
+    text-align: center;
+  }
+
+  .masthead .menu {
+    direction: ltr;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .masthead .menu ul {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+  }
+
+  .masthead .menu ul ul {
+    margin: 0;
+  }
+
+  .masthead .menu li {
+    border-bottom: 1px solid;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .masthead .menu li:first-child {
+    border-top: 1px solid;
+  }
+
+  .masthead .menu li li:last-child {
+    border-bottom: none;
+  }
+
+  .masthead .menu a {
+    display: block;
+    padding: 15px 20px;
+    border-bottom: none;
+  }
+
+  .masthead .menu li li a {
+    padding-left: 30px;
+  }
+
+  .masthead .menu li li::before {
+    content: none;
+  }
+
+  .masthead .menu li li a::before {
+    content: "•\00a0\00a0\00a0";
+  }
+
+  #menu-label {
+    display: inline-block;
+    padding: 0 20px;
+    height: 50px;
+    border: 1px solid;
+    cursor: pointer;
+    line-height: 50px;
+    color: #333;
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  #menu-label:hover, #menu-label:focus {
+    border: 1px solid #888;
+  }
+
+  #menu-label .icon {
+    padding-right: 8px;
+    width: 30px;
+  }
+
+  #menu-check ~ label .close-icon {
+    display: none;
+  }
+
+  #menu-check ~ label .open-icon {
+    display: inline-block;
+  }
+
+  #menu-check:checked ~ label .close-icon {
+    display: inline-block;
+  }
+
+  #menu-check:checked ~ label .open-icon {
+    display: none;
+  }
+
+  #menu-check ~ ul {
+    display: none;
+  }
+
+  #menu-check:checked ~ ul {
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+}
+
+/* Landscape phone screens and smaller */
+
+@media screen and (max-width: 720px) {
+}
+
+/* Portrait phone screens */
+
+@media screen and (max-width: 480px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  h3, h4, h5, h6 {
+    font-size: 16px;
+  }
+
+  pre, code {
+    font-size: 12px;
+  }
+
+  .masthead {
+    padding-top: 0;
+  }
+
 }
