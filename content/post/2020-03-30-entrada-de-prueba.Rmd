@@ -1,0 +1,24 @@
+---
+title: Entrada de Prueba
+author: Juan Hinojosa
+date: '2020-03-30'
+categories: ["R"]
+tags: ["R Markdown", "plot", "regression"]
+---
+
+```{r setup, include=FALSE}
+require(knitr)
+knitr::opts_chunk$set(echo = TRUE, 
+                      message = FALSE, 
+                      warning = F,
+                      fig.align = 'center')
+
+
+```
+
+Esta es una entrada de prueba.
+Vamos a crear una gráfica de una distribución normal
+```{r}
+plot(density(rnorm(n=10000)))
+```
+

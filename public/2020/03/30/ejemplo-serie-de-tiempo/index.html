@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+  <head>
+    
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Ejemplo: Serie de Tiempo - Juan Carlos Hinojosa Peredo</title>
+  <meta name="description" content="Preparación de datos library(readxl) datospib &lt;- read_excel(&quot;~/Desktop/R/MEF/Trabajo_Primer_Parcial_MEF/PIB_TRABAJO_EXAMEN_1_BIE_BIE20200318205927.xls&quot;, range = &quot;A10:B170&quot;) datospib.ajuste &lt;- datospib[69:152, ] #Datos de 1997/01 a 2017/04 pib &lt;- ts(datospib.ajuste[,2], start = c(1997,1), frequency = 4) #Objeto de serie de tiempo  Analisis Exploratorio Gráfica serie de tiempo pib del 1997/01 al 2017/04
+plot(pib) Observamos una clara tendencia deterministica y posible raiz unitaria aparente y un cambio estructural por la crisis del 2008. Hay sospechs de estacionaleidad."><script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "name": "Juan Carlos Hinojosa Peredo",
+    
+    "url": "\/"
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "",
+  "url": "\/"
+  
+  
+  
+  
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "item": {
+          "@id": "\/",
+          "name": "home"
+        }
+    },{
+        "@type": "ListItem",
+        "position": 3,
+        "item": {
+          "@id": "\/2020\/03\/30\/ejemplo-serie-de-tiempo\/",
+          "name": "Ejemplo serie de tiempo"
+        }
+    }]
+}
+</script><script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "author": {
+    "name" : "Juan Hinojosa"
+  },
+  "headline": "Ejemplo: Serie de Tiempo",
+  "description" : "Preparación de datos library(readxl) datospib \x26lt;- read_excel(\x26quot;~\/Desktop\/R\/MEF\/Trabajo_Primer_Parcial_MEF\/PIB_TRABAJO_EXAMEN_1_BIE_BIE20200318205927.xls\x26quot;, range = \x26quot;A10:B170\x26quot;) datospib.ajuste \x26lt;- datospib[69:152, ] #Datos de 1997\/01 a 2017\/04 pib \x26lt;- ts(datospib.ajuste[,2], start = c(1997,1), frequency = 4) #Objeto de serie de tiempo  Analisis Exploratorio Gráfica serie de tiempo pib del 1997\/01 al 2017\/04\nplot(pib) Observamos una clara tendencia deterministica y posible raiz unitaria aparente y un cambio estructural por la crisis del 2008. Hay sospechs de estacionaleidad.",
+  "inLanguage" : "en",
+  "wordCount":  1747 ,
+  "datePublished" : "2020-03-30T00:00:00",
+  "dateModified" : "2020-03-30T00:00:00",
+  "image" : "",
+  "keywords" : [ "" ],
+  "mainEntityOfPage" : "\/2020\/03\/30\/ejemplo-serie-de-tiempo\/",
+  "publisher" : {
+    "@type": "Organization",
+    "name" : "\/",
+    "logo" : {
+        "@type" : "ImageObject",
+        "url" : "",
+        "height" :  60 ,
+        "width" :  60
+    }
+  }
+}
+</script>
+
+<meta property="og:title" content="Ejemplo: Serie de Tiempo" />
+<meta property="og:description" content="Preparación de datos library(readxl) datospib &lt;- read_excel(&quot;~/Desktop/R/MEF/Trabajo_Primer_Parcial_MEF/PIB_TRABAJO_EXAMEN_1_BIE_BIE20200318205927.xls&quot;, range = &quot;A10:B170&quot;) datospib.ajuste &lt;- datospib[69:152, ] #Datos de 1997/01 a 2017/04 pib &lt;- ts(datospib.ajuste[,2], start = c(1997,1), frequency = 4) #Objeto de serie de tiempo  Analisis Exploratorio Gráfica serie de tiempo pib del 1997/01 al 2017/04
+plot(pib) Observamos una clara tendencia deterministica y posible raiz unitaria aparente y un cambio estructural por la crisis del 2008. Hay sospechs de estacionaleidad.">
+<meta property="og:image" content="" />
+<meta property="og:url" content="/2020/03/30/ejemplo-serie-de-tiempo/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Juan Carlos Hinojosa Peredo" />
+
+  <meta name="twitter:title" content="Ejemplo: Serie de Tiempo" />
+  <meta name="twitter:description" content="Preparación de datos library(readxl) datospib &lt;- read_excel(&quot;~/Desktop/R/MEF/Trabajo_Primer_Parcial_MEF/PIB_TRABAJO_EXAMEN_1_BIE_BIE20200318205927.xls&quot;, range = &quot;A10:B170&quot;) …">
+  <meta name="twitter:image" content="" />
+  <meta name="twitter:card" content="summary" />
+  <link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta name="generator" content="Hugo 0.68.3" />
+  <link rel="alternate" href="/index.xml" type="application/rss+xml" title="Juan Carlos Hinojosa Peredo"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" /><link rel="stylesheet" href="/css/syntax.css" /><link rel="stylesheet" href="/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Juan Carlos Hinojosa Peredo</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="GitHub" href="https://github.com/jhinojosp">GitHub</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Twitter" href="https://twitter.com/jchp_23">Twitter</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    
+      <div class="avatar-container">
+        <div class="avatar-img-border">
+          <a title="Juan Carlos Hinojosa Peredo" href="/">
+            <img class="avatar-img" src="" alt="Juan Carlos Hinojosa Peredo" />
+          </a>
+        </div>
+      </div>
+    
+
+  </div>
+</nav>
+
+
+
+
+    
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+
+  
+  
+  
+
+
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              
+                <h1>Ejemplo: Serie de Tiempo</h1>
+              
+              
+              
+              
+                <span class="post-meta">
+  
+  
+  <i class="fas fa-calendar"></i>&nbsp;Posted on March 30, 2020
+  
+  
+  
+  
+    
+      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Juan Hinojosa
+    
+  
+  
+</span>
+
+
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
+
+
+<div id="preparación-de-datos" class="section level3">
+<h3>Preparación de datos</h3>
+<pre class="r"><code>library(readxl)
+
+datospib &lt;- read_excel(&quot;~/Desktop/R/MEF/Trabajo_Primer_Parcial_MEF/PIB_TRABAJO_EXAMEN_1_BIE_BIE20200318205927.xls&quot;, range = &quot;A10:B170&quot;)
+datospib.ajuste &lt;- datospib[69:152, ] #Datos de 1997/01 a 2017/04
+
+pib &lt;- ts(datospib.ajuste[,2], start = c(1997,1), frequency = 4) #Objeto de serie de tiempo</code></pre>
+</div>
+<div id="analisis-exploratorio" class="section level3">
+<h3>Analisis Exploratorio</h3>
+<p>Gráfica serie de tiempo <em>pib</em> del 1997/01 al 2017/04</p>
+<pre class="r"><code>plot(pib)</code></pre>
+<p><img src="/post/2020-03-30-ejemplo-serie-de-tiempo_files/figure-html/unnamed-chunk-2-1.png" width="672" style="display: block; margin: auto;" />
+Observamos una clara tendencia deterministica y posible raiz unitaria aparente y un cambio estructural por la crisis del 2008. Hay sospechs de estacionaleidad.</p>
+<p>Analisamos la serie logarítmica</p>
+<pre class="r"><code>logpib &lt;- log(pib)
+plot(logpib)</code></pre>
+<p><img src="/post/2020-03-30-ejemplo-serie-de-tiempo_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" />
+Es muy parecida a la serie original con las mismas teorías sobre la tendencia, raiz unitaria y estacionaleidad, pero optamos por trabajar con la serie logarítmica por las propiedade aditivas del logaritmo.</p>
+<pre class="r"><code>acf(logpib, lag.max = 40)</code></pre>
+<p><img src="/post/2020-03-30-ejemplo-serie-de-tiempo_files/figure-html/unnamed-chunk-4-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>pacf(logpib, lag.max = 40)</code></pre>
+<p><img src="/post/2020-03-30-ejemplo-serie-de-tiempo_files/figure-html/unnamed-chunk-4-2.png" width="672" style="display: block; margin: auto;" />
+Confirmamos la teoría de raiz unitaria.</p>
+<p>Descomposición de la serie logarítmica:</p>
+<pre class="r"><code>plot(decompose(logpib))</code></pre>
+<p><img src="/post/2020-03-30-ejemplo-serie-de-tiempo_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>plot(decompose(pib))</code></pre>
+<p><img src="/post/2020-03-30-ejemplo-serie-de-tiempo_files/figure-html/unnamed-chunk-5-2.png" width="672" style="display: block; margin: auto;" />
+Observamos que el comportamiento estacional es muy fuerte y la tendencia es muy clara.</p>
+<p>Diferencia de orden 1 a la serie <em>logpib</em></p>
+<pre class="r"><code>d.logpib &lt;- diff(logpib)
+plot(decompose(d.logpib))</code></pre>
+<p><img src="/post/2020-03-30-ejemplo-serie-de-tiempo_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Nos deshicimos de la tendencia pero aún tenemos comportamientos estacionales.</p>
+</div>
+<div id="pruebas-de-raiz-unitaria-dickey-fuller" class="section level3">
+<h3>Pruebas de Raiz Unitaria Dickey-Fuller</h3>
+<div id="hipótesis-logpib" class="section level4">
+<h4>Hipótesis (<em>logpib</em>):</h4>
+<p>Al menos una raíz unitaria</p>
+<pre class="r"><code>library(urca)
+summary(ur.df(logpib, type = &quot;trend&quot;, lags = 4)) #Comenzamos con 4 lags porque tenemos datos cuatrimestrales</code></pre>
+<pre><code>## 
+## ############################################### 
+## # Augmented Dickey-Fuller Test Unit Root Test # 
+## ############################################### 
+## 
+## Test regression trend 
+## 
+## 
+## Call:
+## lm(formula = z.diff ~ z.lag.1 + 1 + tt + z.diff.lag)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.055283 -0.005757  0.000864  0.009194  0.032790 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  4.4804614  1.4155752   3.165  0.00227 ** 
+## z.lag.1     -0.2753454  0.0870727  -3.162  0.00229 ** 
+## tt           0.0014624  0.0004558   3.209  0.00199 ** 
+## z.diff.lag1  0.0365836  0.1137363   0.322  0.74865    
+## z.diff.lag2  0.0686773  0.0978614   0.702  0.48508    
+## z.diff.lag3 -0.2383874  0.0953954  -2.499  0.01474 *  
+## z.diff.lag4  0.5560564  0.0943173   5.896 1.11e-07 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.01472 on 72 degrees of freedom
+## Multiple R-squared:  0.7958, Adjusted R-squared:  0.7787 
+## F-statistic: 46.76 on 6 and 72 DF,  p-value: &lt; 2.2e-16
+## 
+## 
+## Value of test-statistic is: -3.1622 5.7158 5.1482 
+## 
+## Critical values for test statistics: 
+##       1pct  5pct 10pct
+## tau3 -4.04 -3.45 -3.15
+## phi2  6.50  4.88  4.16
+## phi3  8.73  6.49  5.47</code></pre>
+<p>|t| &gt; 1.6, pero como elegimos arbitrariamente <em>M</em> tenemos que proponer un <em>M’</em> &gt; <em>M</em>.</p>
+<pre class="r"><code>summary(ur.df(logpib, type = &quot;trend&quot;, lags = 5))</code></pre>
+<pre><code>## 
+## ############################################### 
+## # Augmented Dickey-Fuller Test Unit Root Test # 
+## ############################################### 
+## 
+## Test regression trend 
+## 
+## 
+## Call:
+## lm(formula = z.diff ~ z.lag.1 + 1 + tt + z.diff.lag)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.053895 -0.005697  0.000490  0.008984  0.033262 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  4.5853239  1.5252180   3.006  0.00367 ** 
+## z.lag.1     -0.2817382  0.0938323  -3.003  0.00371 ** 
+## tt           0.0014727  0.0004899   3.006  0.00367 ** 
+## z.diff.lag1  0.0911677  0.1219270   0.748  0.45713    
+## z.diff.lag2  0.0804391  0.1137193   0.707  0.48170    
+## z.diff.lag3 -0.2144196  0.0988211  -2.170  0.03342 *  
+## z.diff.lag4  0.5868458  0.1002443   5.854 1.41e-07 ***
+## z.diff.lag5 -0.0449493  0.1146417  -0.392  0.69619    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.0147 on 70 degrees of freedom
+## Multiple R-squared:  0.8018, Adjusted R-squared:  0.782 
+## F-statistic: 40.46 on 7 and 70 DF,  p-value: &lt; 2.2e-16
+## 
+## 
+## Value of test-statistic is: -3.0026 5.6917 4.5391 
+## 
+## Critical values for test statistics: 
+##       1pct  5pct 10pct
+## tau3 -4.04 -3.45 -3.15
+## phi2  6.50  4.88  4.16
+## phi3  8.73  6.49  5.47</code></pre>
+<p>|t| &lt; 1.6, entonces podemos empezar a disminuir valores hasta obtener |t| &gt;= 1.6, en este caso ya vimos que con 4 lags esto se cumple. Por lo tanto tenemos <em>M</em>=4</p>
+<p>No se rechazan <em>H0: a = 0</em> ni <em>H0’: beta1 = 0</em>, entonces la tendencia no es significativamente distinta de cero y pasamos a evaluar un modelo <em>drift</em>.</p>
+<pre class="r"><code>#Empezamos la prueba del modelo drift con los mismos lags del último modelo trend
+summary(ur.df(logpib, type = &quot;drift&quot;, lags = 4))</code></pre>
+<pre><code>## 
+## ############################################### 
+## # Augmented Dickey-Fuller Test Unit Root Test # 
+## ############################################### 
+## 
+## Test regression drift 
+## 
+## 
+## Call:
+## lm(formula = z.diff ~ z.lag.1 + 1 + z.diff.lag)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.059906 -0.006922  0.001868  0.007971  0.032866 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept) -0.0017875  0.2431133  -0.007 0.994154    
+## z.lag.1      0.0004631  0.0147443   0.031 0.975032    
+## z.diff.lag1 -0.1696752  0.0996228  -1.703 0.092789 .  
+## z.diff.lag2 -0.0704242  0.0931535  -0.756 0.452081    
+## z.diff.lag3 -0.3647015  0.0922603  -3.953 0.000177 ***
+## z.diff.lag4  0.4945546  0.0980525   5.044 3.22e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.01563 on 73 degrees of freedom
+## Multiple R-squared:  0.7666, Adjusted R-squared:  0.7506 
+## F-statistic: 47.94 on 5 and 73 DF,  p-value: &lt; 2.2e-16
+## 
+## 
+## Value of test-statistic is: 0.0314 3.0391 
+## 
+## Critical values for test statistics: 
+##       1pct  5pct 10pct
+## tau2 -3.51 -2.89 -2.58
+## phi1  6.70  4.71  3.86</code></pre>
+<p>No se rechazan ni <em>H0: a = 0</em> ni <em>H0’: beta0 = 0</em> por lo que el <em>drift</em> no es significativamente distinto de cero y tenemos que evaluar un modelo <em>no constant</em></p>
+<pre class="r"><code>summary(ur.df(logpib, type = &quot;none&quot;, lags = 4))</code></pre>
+<pre><code>## 
+## ############################################### 
+## # Augmented Dickey-Fuller Test Unit Root Test # 
+## ############################################### 
+## 
+## Test regression none 
+## 
+## 
+## Call:
+## lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.059903 -0.006906  0.001863  0.007959  0.032852 
+## 
+## Coefficients:
+##               Estimate Std. Error t value Pr(&gt;|t|)    
+## z.lag.1      0.0003547  0.0001429   2.482 0.015325 *  
+## z.diff.lag1 -0.1696044  0.0984840  -1.722 0.089220 .  
+## z.diff.lag2 -0.0703846  0.0923669  -0.762 0.448476    
+## z.diff.lag3 -0.3646768  0.0915743  -3.982 0.000158 ***
+## z.diff.lag4  0.4945567  0.0973874   5.078 2.76e-06 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.01553 on 74 degrees of freedom
+## Multiple R-squared:  0.7745, Adjusted R-squared:  0.7593 
+## F-statistic: 50.84 on 5 and 74 DF,  p-value: &lt; 2.2e-16
+## 
+## 
+## Value of test-statistic is: 2.4822 
+## 
+## Critical values for test statistics: 
+##      1pct  5pct 10pct
+## tau1 -2.6 -1.95 -1.61</code></pre>
+<p>No se rechazan ni <em>H0: a = 0</em> ni <em>H0’: beta0 = 0</em>, por lo tanto hay al menos una raíz unitaria.</p>
+</div>
+<div id="conclusión-logpib" class="section level4">
+<h4>Conclusión (<em>logpib</em>):</h4>
+<p>Comprobamos la hipótesis de que hay al menos una raiz unitaria en la serie <em>logpib</em>.</p>
+<p>Como conlcuimos que <em>logpib</em> tiene una raiz unitaria, hacemos pruebas ADF para la serie diferenciada de orden uno, <em>d.logpib</em>. Empezamos directo en el modelo no constant, siguiendo el proceso de las pruebas de Dickey-Fuller, con un lag menos que en la útlima prueba realizada.</p>
+</div>
+<div id="hipótesis-d.logpib" class="section level4">
+<h4>Hipótesis (d.logpib):</h4>
+<p>Con la diferenciación nos deshicimos de la única raiz unitaria.</p>
+<pre class="r"><code>summary(ur.df(d.logpib, type = &quot;none&quot;, lags = 3))</code></pre>
+<pre><code>## 
+## ############################################### 
+## # Augmented Dickey-Fuller Test Unit Root Test # 
+## ############################################### 
+## 
+## Test regression none 
+## 
+## 
+## Call:
+## lm(formula = z.diff ~ z.lag.1 - 1 + z.diff.lag)
+## 
+## Residuals:
+##       Min        1Q    Median        3Q       Max 
+## -0.052962 -0.003922  0.004375  0.010218  0.042150 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## z.lag.1     -0.66028    0.20716  -3.187   0.0021 ** 
+## z.diff.lag1 -0.38990    0.16558  -2.355   0.0212 *  
+## z.diff.lag2 -0.35762    0.13626  -2.625   0.0105 *  
+## z.diff.lag3 -0.61690    0.08684  -7.104 5.92e-10 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.01605 on 75 degrees of freedom
+## Multiple R-squared:  0.9255, Adjusted R-squared:  0.9216 
+## F-statistic:   233 on 4 and 75 DF,  p-value: &lt; 2.2e-16
+## 
+## 
+## Value of test-statistic is: -3.1872 
+## 
+## Critical values for test statistics: 
+##      1pct  5pct 10pct
+## tau1 -2.6 -1.95 -1.61</code></pre>
+<p>Rechazamos <em>H0: a = 0</em> y terminamos la</p>
+</div>
+<div id="conclusión-d.logpib" class="section level4">
+<h4>Conclusión (<em>d.logpib</em>):</h4>
+<p>No existe raiz unitaria al rededor de cero para la serie <em>d.logpib</em>.</p>
+<p>Para concluir las pruebas de raiz unitaria, tenemos que verificar el orden de differenciación estacional.</p>
+</div>
+<div id="hipótesis-d.logpib-1" class="section level4">
+<h4>Hipótesis (d.logpib):</h4>
+<p>Al menos una diferenciación estacional.</p>
+<pre class="r"><code>library(forecast)
+nsdiffs(logpib)</code></pre>
+<pre><code>## [1] 1</code></pre>
+<p>La función nos confirma la hipótesis de que necesitamos una diferenciación estacional.</p>
+</div>
+</div>
+<div id="ajuste-de-modelos-sarima" class="section level3">
+<h3>Ajuste de Modelos SARIMA</h3>
+<p>Proponemos modelos</p>
+<pre class="r"><code>sarima.010.010.4 &lt;- arima(logpib, c(0,1,0), list(order = c(0,1,0), 4))
+sarima.110.010.4 &lt;- arima(logpib, c(1,1,0), list(order = c(0,1,0), 4))
+sarima.110.110.4 &lt;- arima(logpib, c(1,1,0), list(order = c(1,1,0), 4))
+sarima.111.110.4 &lt;- arima(logpib, c(1,1,1), list(order = c(1,1,0), 4))
+sarima.111.111.4 &lt;- arima(logpib, c(1,1,1), list(order = c(1,1,1), 4))
+sarima.210.010.4 &lt;- arima(logpib, c(2,1,0), list(order = c(0,1,0), 4))
+sarima.211.010.4 &lt;- arima(logpib, c(2,1,1), list(order = c(0,1,0), 4))
+sarima.211.110.4 &lt;- arima(logpib, c(2,1,1), list(order = c(1,1,0), 4))
+sarima.211.210.4 &lt;- arima(logpib, c(2,1,1), list(order = c(2,1,0), 4))
+sarima.211.211.4 &lt;- arima(logpib, c(2,1,1), list(order = c(2,1,1), 4))
+sarima.102.011.4 &lt;- arima(logpib, c(1,0,2), list(order = c(0,1,1), 4))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="left">SARIMA Model</th>
+<th align="left">AIC</th>
+<th align="left">BIC</th>
+<th align="left">MAE</th>
+<th align="left">MAPE</th>
+<th align="left">RMSE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td align="left">010.010.4</td>
+<td align="left">-409.0421</td>
+<td align="left">-406.6726</td>
+<td align="left">0.0128</td>
+<td align="left">0.0778</td>
+<td align="left">0.0178</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td align="left">110.010.4</td>
+<td align="left">-408.5507</td>
+<td align="left">-403.8118</td>
+<td align="left">0.0129</td>
+<td align="left">0.0786</td>
+<td align="left">0.0177</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td align="left">110.110.4</td>
+<td align="left">-422.5251</td>
+<td align="left">-415.4168</td>
+<td align="left">0.0117</td>
+<td align="left">0.071</td>
+<td align="left">0.016</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td align="left">111.110.4</td>
+<td align="left">-420.3441</td>
+<td align="left">-410.8663</td>
+<td align="left">0.0116</td>
+<td align="left">0.0707</td>
+<td align="left">0.016</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td align="left">111.111.4</td>
+<td align="left">-425.4589</td>
+<td align="left">-413.6116</td>
+<td align="left">0.011</td>
+<td align="left">0.0669</td>
+<td align="left">0.0152</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td align="left">210.010.4</td>
+<td align="left">-406.9706</td>
+<td align="left">-399.8623</td>
+<td align="left">0.0128</td>
+<td align="left">0.078</td>
+<td align="left">0.0176</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td align="left">211.010.4</td>
+<td align="left">-405.3082</td>
+<td align="left">-395.8304</td>
+<td align="left">0.0128</td>
+<td align="left">0.0777</td>
+<td align="left">0.0176</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td align="left">211.110.4</td>
+<td align="left">-420.2143</td>
+<td align="left">-408.367</td>
+<td align="left">0.0115</td>
+<td align="left">0.0696</td>
+<td align="left">0.0158</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td align="left">211.210.4</td>
+<td align="left">-422.2474</td>
+<td align="left">-408.0307</td>
+<td align="left">0.0111</td>
+<td align="left">0.0673</td>
+<td align="left">0.0154</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td align="left">211.211.4</td>
+<td align="left">-424.1093</td>
+<td align="left">-407.5231</td>
+<td align="left">0.0105</td>
+<td align="left">0.0639</td>
+<td align="left">0.015</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td align="left">102.011.4</td>
+<td align="left">-431.54</td>
+<td align="left">-419.6298</td>
+<td align="left">0.0111</td>
+<td align="left">0.0673</td>
+<td align="left">0.0151</td>
+</tr>
+</tbody>
+</table>
+<div id="conclusión" class="section level4">
+<h4>Conclusión:</h4>
+<p>El mejor podelo por ambos criterios, AIC y BIC, es un <em>SARIMA(1,0,2)(0,1,1,4)</em>.</p>
+<p>Comprobamos el resultado de la función autoarima analizando la gráfica de descomposición de la serie <em>logpib</em> diferenciada con lag 4 (un orden de diferencia estacional)</p>
+<pre class="r"><code>sd.logpib &lt;- diff(logpib, lag = 4)
+plot(decompose(sd.logpib)) #En principio la diferencia estacional le quita la tendencia también pero sigue teniendo un poco de estacionaleidad, por eso se considera también el ganador &quot;organico&quot; sarima.211.211.4</code></pre>
+<p><img src="/post/2020-03-30-ejemplo-serie-de-tiempo_files/figure-html/unnamed-chunk-15-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div id="validación" class="section level3">
+<h3>Validación</h3>
+<p>Analisis de loa residuales</p>
+<pre class="r"><code>checkresiduals(sarima.102.011.4) #Ganador por AIC y BIC. Obtenido con autoarima()</code></pre>
+<p><img src="/post/2020-03-30-ejemplo-serie-de-tiempo_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>## 
+##  Ljung-Box test
+## 
+## data:  Residuals from ARIMA(1,0,2)(0,1,1)[4]
+## Q* = 3.1988, df = 4, p-value = 0.5251
+## 
+## Model df: 4.   Total lags used: 8</code></pre>
+<pre class="r"><code>checkresiduals(sarima.211.211.4) #Ganador por AIC</code></pre>
+<p><img src="/post/2020-03-30-ejemplo-serie-de-tiempo_files/figure-html/unnamed-chunk-16-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre><code>## 
+##  Ljung-Box test
+## 
+## data:  Residuals from ARIMA(2,1,1)(2,1,1)[4]
+## Q* = 2.6493, df = 3, p-value = 0.4489
+## 
+## Model df: 6.   Total lags used: 9</code></pre>
+<div id="conclusión-1" class="section level4">
+<h4>Conclusión:</h4>
+<p>Ambos modelos muestran ausencia de estructura en los residuales, pdríamos decir que son un proceso de Ruido Blanco Gaussiano. Por tanto, validamos los modelos.</p>
+</div>
+</div>
+<div id="pronósticos" class="section level3">
+<h3>Pronósticos</h3>
+<pre class="r"><code>plot(forecast(sarima.102.011.4))</code></pre>
+<p><img src="/post/2020-03-30-ejemplo-serie-de-tiempo_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>plot(forecast(sarima.211.211.4))</code></pre>
+<p><img src="/post/2020-03-30-ejemplo-serie-de-tiempo_files/figure-html/unnamed-chunk-17-2.png" width="672" style="display: block; margin: auto;" /></p>
+<pre class="r"><code>plot(ts(datospib[69:160,][,2], start = c(1997,1), frequency = 4), main = &quot;Serie pib, periodo 1997/1 a 2019/4&quot;) #serie de tiempo con datos hasta 2019/04</code></pre>
+<p><img src="/post/2020-03-30-ejemplo-serie-de-tiempo_files/figure-html/unnamed-chunk-17-3.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+
+
+        
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="/2020/03/30/entrada-de-prueba/" data-toggle="tooltip" data-placement="top" title="Entrada de Prueba">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+
+    </div>
+  </div>
+</div>
+
+      
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+
+          &nbsp;&bull;&nbsp;&copy;
+          
+            2020
+          
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="/">Juan Carlos Hinojosa Peredo</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="https://gohugo.io">Hugo v0.68.3</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="/js/main.js"></script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+
+
+
+    
+  </body>
+</html>
+
